@@ -20,7 +20,8 @@ export default async function cadastro(cpf: string, codigos: Array<string>, sock
 
     socket.emit("status", {error: false, message: "Iniciando um novo browser"});
     const browser = await puppeteer.launch({
-        headless: true
+        headless: true,
+        args: ["--no-sandbox"]
     });
 
     socket.emit("status", {error: false, message: "Abrindo uma nova pagina"});

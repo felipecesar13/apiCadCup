@@ -53,7 +53,8 @@ function cadastro(cpf, codigos, socket) {
                     cadastrado = [];
                     socket.emit("status", { error: false, message: "Iniciando um novo browser" });
                     return [4 /*yield*/, puppeteer_1.default.launch({
-                            headless: true
+                            headless: true,
+                            args: ["--no-sandbox"]
                         })];
                 case 1:
                     browser = _a.sent();
